@@ -8,10 +8,10 @@ import javax.microedition.khronos.opengles.GL10;
 
 public class Square {
     float[] a = new float[]{
-            -1, 1, 0,
-            -1, -1, 0,
-            1, -1, 0,
-            1, 1, 0
+            -1, -1.5f, 0,
+            -1, -3.5f, 0,
+            1, -3.5f, 0,
+            1,  -1.5f, 0
     };
     float[] c = new float[]{
             1, 1, 0, 1,
@@ -28,6 +28,7 @@ public class Square {
         f=b.asFloatBuffer();
         f.put(a);
         f.position(0);
+
         b=ByteBuffer.allocateDirect(4*4*4);
         b.order(ByteOrder.nativeOrder());
         col=b.asFloatBuffer();
