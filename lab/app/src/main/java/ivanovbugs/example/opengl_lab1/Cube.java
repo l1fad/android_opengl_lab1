@@ -13,14 +13,15 @@ public class Cube {
     private ByteBuffer mIndexBuffer;
 
     private float vertices[] = {
-            -1.0f, -1.0f, -1.0f,
-            1.0f, -1.0f, -1.0f,
-            1.0f,  1.0f, -1.0f,
-            -1.0f, 1.0f, -1.0f,
-            -1.0f, -1.0f,  1.0f,
-            1.0f, -1.0f,  1.0f,
-            1.0f,  1.0f,  1.0f,
-            -1.0f,  1.0f,  1.0f
+            -1.0f, 1.5f, -1.0f,
+            1.0f, 1.5f, -1.0f,
+            1.0f,  3.5f, -1.0f,
+            -1.0f, 3.5f, -1.0f,
+
+            -1.0f, 1.5f,  1.0f,
+            1.0f, 1.5f,  1.0f,
+            1.0f,  3.5f,  1.0f,
+            -1.0f, 3.5f,  1.0f
     };
     private float colors[] = {
             0.0f,  1.0f,  0.0f,  1.0f,
@@ -69,8 +70,7 @@ public class Cube {
         gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
         gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
 
-        gl.glDrawElements(GL10.GL_TRIANGLES, 36, GL10.GL_UNSIGNED_BYTE,
-                mIndexBuffer);
+        gl.glDrawElements(GL10.GL_TRIANGLES, 36, GL10.GL_UNSIGNED_BYTE, mIndexBuffer);
 
         gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
         gl.glDisableClientState(GL10.GL_COLOR_ARRAY);

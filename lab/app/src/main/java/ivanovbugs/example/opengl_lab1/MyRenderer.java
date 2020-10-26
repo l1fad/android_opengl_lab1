@@ -1,23 +1,16 @@
 package ivanovbugs.example.opengl_lab1;
 
-import android.opengl.GLSurfaceView;
 import android.opengl.GLSurfaceView.Renderer;
 import android.opengl.GLU;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
-import static android.opengl.GLES20.glClearColor;
-import static android.opengl.GLES20.glClear;
-import static android.opengl.GLES20.glViewport;
-import static android.opengl.GLES20.GL_COLOR_BUFFER_BIT;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.FloatBuffer;
 
 
 public class MyRenderer implements Renderer
 {
     private Cube mCube = new Cube();
+    private Square mSquare = new Square();
     private float mCubeRotation;
 
     @Override
@@ -36,13 +29,14 @@ public class MyRenderer implements Renderer
         gl.glLoadIdentity();
 
         gl.glTranslatef(0.0f, 0.0f, -10.0f);
-        gl.glRotatef(mCubeRotation, 1.0f, 1.0f, 1.0f);
+
+        gl.glRotatef(mCubeRotation, 0f, 1.0f, 0f);
 
         mCube.draw(gl);
-
+        mSquare.draw(gl);
         gl.glLoadIdentity();
 
-        mCubeRotation -= 0.15f;
+        mCubeRotation -= 0.45f;
     }
 
     @Override
