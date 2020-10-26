@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity
         g.setRenderer(new MyRenderer());
         g.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
         setContentView(g);
-
     }
 
 
